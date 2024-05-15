@@ -4,16 +4,15 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    "Country",
+    "country",
     {
       id: {
         type: DataTypes.STRING,
-        length: 3,
         allowNull: false,
         primaryKey: true,
       },
       name: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       flag: {
@@ -25,12 +24,16 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       capital: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+      },
+      subregion: {
         type: DataTypes.STRING,
-        allowNull: false,
+      },
+      area: {
+        type: DataTypes.INTEGER,
       },
       population: {
         type: DataTypes.INTEGER,
-        allowNull: false,
       },
     },
     { timestamps: false }
