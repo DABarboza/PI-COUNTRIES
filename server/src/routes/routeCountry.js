@@ -4,9 +4,11 @@ const router = Router();
 const getCountriesFromApi = require("../controllers/getCountriesFromApi");
 const getAllCountries = require("../controllers/getAllcountries");
 const getCountryById = require("../controllers/getCountryById");
+const getCountryByName = require("../controllers/getCountryByName");
 
 //!Traigo los paises de la api
 router.get("/", async (req, res) => {
+  console.log(req);
   try {
     const countries = await getCountriesFromApi();
     res.json({ message: "Countries saved in db" });
@@ -34,14 +36,30 @@ router.get("/countries", async (req, res) => {
 //!Traigo un pais por id
 router.get("/countries/:id", async (req, res) => {
   try {
-    const country = await getCountryById(req, res);
-    if (!country) {
+    const countryById = await getCountryById(req, res);
+    if (!countryById) {
       return res.status(404).json({ message: "Country not found" });
     }
-    return country;
+    return countryById;
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Error retrieving country" });
+    return res.status(500).json({ message: "Error retrieving country by id" });
+  }
+});
+
+//!Traigo un pais por name
+router.get("/countries/name/:name", async (req, res) => {
+  try {
+    const countryByName = await getCountryByName(req, res);
+    if (!countryByName) {
+      return res.status(404).json({ message: "Country not found" });
+    }
+    return countryByName;
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .json({ message: "Error retrieving country by Name" });
   }
 });
 
