@@ -1,0 +1,56 @@
+body {
+  background-image: url("https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+}
+.holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.land {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 50px;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+.divi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  background-color: #185d1a;
+  border-radius: 10px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #053307;
+}
+
+.button:active {
+  background-color: #0f4012;
+  transform: translateY(2px);
+}
+.link {
+  color: white;
+  text-decoration: none;
+}
+.title {
+  color: rgb(233, 229, 193);
+  font-size: 90px;
+  text-shadow: 5px 5px #000000;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Broadway Normal", "Broadway", sans-serif;
+}

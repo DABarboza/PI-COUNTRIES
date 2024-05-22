@@ -1,17 +1,16 @@
 import "./App.css";
-import { Route } from "react-router-dom";
-import Landing from "./Components/LandingPage/Landing";
-import HomePage from "../src/Components/HomePage/HomePage";
-import CountryId from "../src/Components/CountryId/CountryId";
-import Activities from "./Components/FormPage/Activities";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Landing from "./components/LandingPage/landigPage";
+import HomePage from "./components/HomePage/homePage";
 
 function App() {
   return (
     <div className="App">
-      <Route exact path="/" component={Landing} />
-      <Route exact path="/countries" component={HomePage} />
-      <Route exact path="/countries/:id" component={CountryId} />
-      <Route exact path="/activities" component={Activities} />
+      <Routes>
+        <Route exact path="/" element={<Landing />} />
+        <Route exact path="/home" element={<HomePage />} />
+      </Routes>
     </div>
   );
 }
