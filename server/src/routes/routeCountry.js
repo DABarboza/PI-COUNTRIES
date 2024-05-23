@@ -6,18 +6,18 @@ const getAllCountries = require("../controllers/getAllcountries");
 const getCountryById = require("../controllers/getCountryById");
 const getCountryByName = require("../controllers/getCountryByName");
 
-//!Traigo los paises de la api
-router.get("/", async (req, res) => {
-  console.log(req);
-  try {
-    const countries = await getCountriesFromApi();
-    res.json({ message: "Countries saved in db" });
-    return countries;
-  } catch (error) {
-    console.log(error);
-    res.status(500).json("Error saving countries in db");
-  }
-});
+// //!Traigo los paises de la api
+// router.get("/", async (req, res) => {
+//   console.log(req);
+//   try {
+//     const countries = await getCountriesFromApi();
+//     res.json({ message: "Countries saved in db" });
+//     return countries;
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json("Error saving countries in db");
+//   }
+// });
 
 //!Traigo los paises de la db
 router.get("/countries", async (req, res) => {
