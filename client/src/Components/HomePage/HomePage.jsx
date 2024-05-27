@@ -4,6 +4,7 @@ import { getCountries } from "../../actions/action";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import style from "./homePage.module.css";
+import Nav from "../Nav/Nav";
 
 export function HomePage() {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export function HomePage() {
 
   return (
     <div>
-      {/* <Nav /> */}
+      <Nav />
       <div>
         <Countries />
       </div>

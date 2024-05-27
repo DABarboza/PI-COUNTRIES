@@ -34,26 +34,28 @@ const Countries = () => {
   useEffect(() => {
     firstPage();
   }, [countries]);
-    
-    const filteredCountries = countries.slice(currentPage, currentPage + 10);
 
-    return (
-        <div>
-            <button onClick={prevPage}>{`<<`}</button>
-            <button onClick={firstPage}> {`<`}</button>
-            <button onClick={nextPage}>{`>`}</button>
-            <button onClick={lastPage}>{`>>`}</button>
-            <div>
-                {filteredCountries.map((e) => (
-                    <Country
-                        id={e.id}
-                        flag={e.flag}
-                        name={e.name}
-                        region={e.region}                        
-                />))}
-            </div>
+  const filteredCountries = countries.slice(currentPage, currentPage + 10);
+
+  return (
+    <div>
+      <button onClick={prevPage} className={Style.button}>{`<<`}</button>
+      <button onClick={firstPage} className={Style.button}>{`<`}</button>
+      <button onClick={nextPage} className={Style.button}>{`>`}</button>
+      <button onClick={lastPage} className={Style.button}>{`>>`}</button>
+      <div className={Style.grid}>
+        {filteredCountries.map((e) => (
+          <Country
+            key={e.id}
+            id={e.id}
+            flag={e.flag}
+            name={e.name}
+            region={e.region}
+          />
+        ))}
       </div>
-  )
+    </div>
+  );
 };
 
 export default Countries;
