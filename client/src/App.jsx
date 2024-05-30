@@ -1,8 +1,8 @@
 import "./App.css";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Landing from "./components/LandingPage/landigPage";
-import HomePage from "./components/HomePage/HomePage";
+import Landing from "./Components/LandingPage/landigPage";
+import HomePage from "./Components/HomePage/HomePage";
 
 function App() {
   return (

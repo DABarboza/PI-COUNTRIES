@@ -10,7 +10,7 @@ import {
   SHOW_ACTIV,
 } from "../actions/actionName";
 
-import { ordAlpha, ordPop } from "../components/Orders/Order";
+import { ordAlpha, ordPop } from "../Components/Orders/Order";
 
 const initialState = {
   countries: [],

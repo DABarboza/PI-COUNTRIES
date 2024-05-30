@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Countries from "../CardsCountries/Countries";
+import Countries from "../CardsCountries/countries";
 import { getCountries } from "../../actions/action";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
