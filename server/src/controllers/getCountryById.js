@@ -1,9 +1,12 @@
+const { where } = require("sequelize");
 const { Country } = require("../db");
 
 module.exports = async function getCountryById(req, res) {
   const { id } = req.params;
   try {
-    const country = await Country.findByPk(id);
+    const country = await Country.findByPk(where({ id: id }), {
+      include: ["activities"],
+    });
     if (!country) {
       return res.status(404).json({ message: "Country not found" });
     }

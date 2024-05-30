@@ -1,6 +1,7 @@
 body {
   background-image: url("https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg");
   background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   height: 100vh;
   margin: 0;
