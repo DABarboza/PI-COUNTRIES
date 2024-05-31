@@ -5,28 +5,32 @@ const {
   getActivities,
   postActivities,
 } = require("../controllers/postActivities");
+const getActivityById = require("../controllers/getActivityById");
 
-//!Traigo las actividades de la db
-router.get("/activities", async (req, res) => {
+router.post("/activities", async (req, res, next) => {
   try {
-    const activities = await getActivities();
-    if (activities.length === 0) {
-      return res.status(404).json({ message: "No activities found" });
-    }
-    res.json(activities);
+    const newActivity = await postActivities(req, res, next);
+    return res.json(newActivity);
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Error retrieving activities" });
+    return next(error);
   }
 });
 
-router.post("/activities", async (req, res) => {
+router.get("/activities", async (req, res, next) => {
   try {
-    const newActivity = await postActivities(req, res);
-    res.status(201).json(newActivity);
+    const activities = await getActivities(req, res, next);
+    return res.json(activities);
   } catch (error) {
-    res.status(404).json({ error: error.message });
+    return next(error);
   }
 });
 
+router.get("/activities/:id", async (req, res, next) => {
+  try {
+    const activityById = await getActivityById(req, res, next);
+    return res.json(activityById);
+  } catch (error) {
+    return next(error);
+  }
+});
 module.exports = router;
