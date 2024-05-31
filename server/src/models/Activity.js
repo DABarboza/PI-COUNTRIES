@@ -14,7 +14,8 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       difficulty: {
-        type: DataTypes.ENUM("1", "2", "3", "4", "5"),
+        type: DataTypes.STRING,
+        allowNull:false,
       },
       duration: {
         type: DataTypes.STRING,
@@ -23,9 +24,7 @@ module.exports = (sequelize) => {
         type: DataTypes.ENUM("Summer", "Autumn", "Winter", "Spring"),
         allowNull: false,
       },
-      country: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
-      },
+     
     },
     {
       timestamps: false,

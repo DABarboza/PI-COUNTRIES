@@ -7,6 +7,7 @@ const {
 } = require("../controllers/postActivities");
 
 //!Traigo las actividades de la db
+
 router.get("/activities", async (req, res) => {
   try {
     const activities = await getActivities();
@@ -19,6 +20,7 @@ router.get("/activities", async (req, res) => {
     return res.status(500).json({ message: "Error retrieving activities" });
   }
 });
+
 
 router.post("/activities", async (req, res) => {
   try {
