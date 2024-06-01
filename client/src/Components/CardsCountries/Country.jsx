@@ -1,20 +1,26 @@
-import React from "react";
 import style from "./country.module.css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const Country = ({ flag, name, region, id, activities }) => {
+const Country = ({ id, name, flag, region }) => {
   return (
-    <div className={style.countryContainer}>
-      <Link className={style.link} to={`/countries/${id}`}>
-        <h2 className={style.text}>{name}</h2>
-        <div>
-          <img className={style.imgContainer} src={flag} alt="no img" />
+    <div className={style.countryCard}>
+      <Link to={`/countries/${id}`}>
+        <div className={style.flagContainer}>
+          <img src={flag} alt={`${name} flag`} className={style.flag} />
         </div>
-        <h3>{region}</h3>
-        <h3>{activities}</h3>
+        <h3>{name}</h3>
+        <p>{region}</p>
       </Link>
     </div>
   );
+};
+
+Country.propTypes = {
+  flag: PropTypes.string,
+  name: PropTypes.string,
+  region: PropTypes.string,
+  id: PropTypes.string,
 };
 
 export default Country;

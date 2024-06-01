@@ -1,0 +1,55 @@
+.detailContainer {
+  width: 600px; /* Ancho fijo */
+  height: auto; /* Altura automática */
+  position: fixed;
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para centrar completamente */
+  padding: 20px;
+  border: 3px solid #000000;
+  border-radius: 50px;
+  background: url("https://c.wallhere.com/photos/dd/1d/2560x1600_px_Dark_map_Photoshopped_world_World_Map-1215130.jpg!d"); /* Cambia 'background.jpg' por la ruta de tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  z-index: 999;
+  font-size: 30px;
+  color: #a5a2a2;
+}
+
+.detailTitle {
+  font-size: ;
+  color: #000000;
+  background-color: #91979e6c;
+  margin-bottom: 10px;
+}
+
+.detailInfo {
+  margin-bottom: 10px;
+}
+
+.detailInfo h4 {
+  margin: 5px 0;
+  color: #535252;
+}
+
+.flag {
+  max-width: 100px;
+  display: block;
+  margin: 10px auto;
+}
+
+.detailButton {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.detailButton:hover {
+  background-color: #0056b3;
+}
