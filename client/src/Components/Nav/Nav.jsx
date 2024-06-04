@@ -65,7 +65,7 @@ const NavBar = ({
   return (
     <div className={style.navBarContainer}>
       <Link to="/" className={style.link}>
-        <p>Welcome LOGO</p>
+        <p>HOME</p>
       </Link>
       <div className={style.sortContainer}>
         <p>Sort by</p>
@@ -110,7 +110,7 @@ const NavBar = ({
       </div>
 
       <Link to="/activities" className={style.link2}>
-        <p className={style.textact}>CREATE AN ACTIVITY</p>
+        <p className={style.textact}>NEW ACTIVITY</p>
       </Link>
     </div>
   );
